@@ -35,5 +35,6 @@ class Licence(models.Model):
 	operatingSystem = models.CharField(max_length=10 , choices=SYSTEMS, default="Windows")
 	hostID = models.IntegerField()
 
+
 	def __str__(self):
 		return self.firstname+' '+self.name
