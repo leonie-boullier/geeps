@@ -1,0 +1,16 @@
+{% extends 'matLab/base.html' %}
+
+{% block content %}
+	<h1>Detail renouvellement licence</h1>
+	<ul>
+    <li> Firstname : {{licence.firstname}} </li>
+    <li> Name : {{licence.name}}</li>
+    <li> Email : {{licence.email}}</li>
+    <li> Telephone : {{licence.telephone}}</li>
+    <li> Bureau : {{licence.bureau}}</li>
+    <li> Batiment : {{licence.batiment}}</li>
+    <li> Matlab Realease : {{licence.matlabRelease}}</li>
+    <li> OS : {{licence.operatingSystem}}</li>
+    <li> HostID : {{licence.hostID}}</li>
+  <ul>
+{% endblock %}
