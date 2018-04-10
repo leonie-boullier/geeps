@@ -1,13 +1,28 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>GeePs Matlab License Center</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/matLab.css' %}">
+        <script type="text/javascript" src="{% static 'js/jquery-3.3.1.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/matLab.js' %}"></script>
+    </head>
 <body>
     <div class="page-header">
         <h1><a href="/">GeePs Matlab License Center</a></h1>
+        <div class="language">
+			<label for="selectLang">Langue :</label>
+			<select id="selectLang" onclick="changeLang(this);">
+				<option value="fr">Français</option>
+				<option value="en">English</option>
+			</select>
+        </div>
     </div>
-    <div class="content container">
+    <div class="content-container">
         <div class="row">
-            <div class="col-md-8">
-            {% block content %}
-            {% endblock %}
-            </div>
+			{% block content %}
+			{% endblock %}
         </div>
     </div>
 </body>
