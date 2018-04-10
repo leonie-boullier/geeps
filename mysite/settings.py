@@ -120,3 +120,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# EMAIL
+EMAIL_USE_TLS = True
+#A enlever en production
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#######
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'licence.geepsmatlab@gmail.com'
+EMAIL_HOST_PASSWORD = 'geepsmatlab'
+EMAIL_PORT = 587
