@@ -1,0 +1,66 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-14 11:53+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: matLab/models.py:29 matLab/templates/matLab/licence_details.html:8
+msgid "Nom"
+msgstr "Name"
+
+#: matLab/models.py:30 matLab/templates/matLab/licence_details.html:7
+msgid "Prénom"
+msgstr "Firstname"
+
+#: matLab/models.py:31 matLab/templates/matLab/licence_details.html:9
+msgid "Adresse mail"
+msgstr "Email adress"
+
+#: matLab/models.py:32 matLab/templates/matLab/licence_details.html:10
+msgid "Téléphone"
+msgstr "Phone Number"
+
+#: matLab/models.py:33 matLab/templates/matLab/licence_details.html:11
+msgid "Bureau"
+msgstr "Office"
+
+#: matLab/models.py:34 matLab/templates/matLab/licence_details.html:12
+msgid "Bâtiment"
+msgstr "Building"
+
+#: matLab/models.py:35 matLab/templates/matLab/licence_details.html:13
+msgid "Version de MatLab"
+msgstr "MatLab release"
+
+#: matLab/models.py:36 matLab/templates/matLab/licence_details.html:14
+msgid "Système"
+msgstr "Operating System"
+
+#: matLab/templates/matLab/formulaire.html:5
+#: matLab/templates/matLab/index.html:4
+msgid "Renouvellement Licence"
+msgstr "Licence renewal"
+
+#: matLab/templates/matLab/formulaire.html:8
+#: matLab/templates/matLab/index.html:7
+msgid "Envoyer"
+msgstr "Send"
+
+#: matLab/templates/matLab/licence_details.html:5
+#, fuzzy
+#| msgid "Detail renouvellement licence"
+msgid "Détail renouvellement licence"
+msgstr "Details Licence renewal"

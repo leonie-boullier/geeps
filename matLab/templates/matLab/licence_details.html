@@ -1,16 +1,17 @@
 {% extends 'matLab/base.html' %}
+{% load i18n %}
 
 {% block content %}
-	<h1>Detail renouvellement licence</h1>
+	<h1>{% trans "Détail renouvellement licence" %}</h1>
 	<ul>
-    <li> Firstname : {{licence.firstname}} </li>
-    <li> Name : {{licence.name}}</li>
-    <li> Email : {{licence.email}}</li>
-    <li> Telephone : {{licence.telephone}}</li>
-    <li> Bureau : {{licence.bureau}}</li>
-    <li> Batiment : {{licence.batiment}}</li>
-    <li> Matlab Realease : {{licence.matlabRelease}}</li>
-    <li> OS : {{licence.operatingSystem}}</li>
-    <li> HostID : {{licence.hostID}}</li>
-  <ul>
+	    <li>{% trans "Prénom" %} : {{licence.firstname}} </li>
+	    <li>{% trans "Nom" %} : {{licence.name}}</li>
+	    <li>{% trans "Adresse mail" %} Email : {{licence.email}}</li>
+	    <li>{% trans "Téléphone" %} Telephone : {{licence.telephone}}</li>
+	    <li>{% trans "Bureau" %} Bureau : {{licence.bureau}}</li>
+	    <li>{% trans "Bâtiment" %} Batiment : {{licence.batiment}}</li>
+	    <li>{% trans "Version de MatLab" %} Matlab Realease : {{licence.matlabRelease}}</li>
+	    <li>{% trans "Système" %} OS : {{licence.operatingSystem}}</li>
+	    <li>HostID : {{licence.hostID}}</li>
+  	</ul>
 {% endblock %}

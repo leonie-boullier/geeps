@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load i18n %}
 <html>
     <head>
         <title>GeePs Matlab License Center</title>
@@ -12,11 +13,16 @@
     <div class="page-header">
         <h1><a href="/">GeePs Matlab License Center</a></h1>
         <div class="language">
-			<label for="selectLang">Langue :</label>
-			<select id="selectLang" onclick="changeLang(this);">
-				<option value="fr">Français</option>
-				<option value="en">English</option>
+		<form action="/i18n/setlang/" method="post">
+			{% csrf_token %}
+			<input type="hidden" value="#" name="next"/>
+			<select name="language">
+			{% for lang in LANGUAGES %}
+				<option value="{{ lang.0 }}">{{ lang.1 }}</option>
+			{% endfor %}
 			</select>
+			<input type="submit" />
+		</form>
         </div>
     </div>
     <div class="content-container">

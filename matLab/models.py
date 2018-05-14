@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.utils import timezone
+from django.utils.translation import ugettext_lazy as _
 
 # Create your models here.
 
@@ -25,14 +26,14 @@ class Licence(models.Model):
 		('Linux', 'Linux'),
 	)
 
-	name = models.CharField(max_length=50)
-	firstname = models.CharField(max_length=50)
-	email = models.EmailField(max_length=50)
-	telephone = models.CharField(max_length=10)
-	bureau = models.CharField(max_length=200)
-	batiment = models.CharField(max_length=10, choices=BATIMENTS, default="GeePs")
-	matlabRelease = models.CharField(max_length=10, choices=MATLABRELEASES, default="R2017b")
-	operatingSystem = models.CharField(max_length=10 , choices=SYSTEMS, default="Windows")
+	name = models.CharField(max_length=50, verbose_name=_("Nom"))
+	firstname = models.CharField(max_length=50, verbose_name=_("Prénom"))
+	email = models.EmailField(max_length=50, verbose_name=_("Adresse mail"))
+	telephone = models.CharField(max_length=10, verbose_name=_("Téléphone"))
+	bureau = models.CharField(max_length=200, verbose_name=_("Bureau"))
+	batiment = models.CharField(max_length=10, verbose_name=_("Bâtiment"), choices=BATIMENTS, default="GeePs")
+	matlabRelease = models.CharField(max_length=10, verbose_name=_("Version de MatLab"), choices=MATLABRELEASES, default="R2017b")
+	operatingSystem = models.CharField(max_length=10 , verbose_name=_("Système"), choices=SYSTEMS, default="Windows")
 	hostID = models.IntegerField()
 
 
