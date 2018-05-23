@@ -5,6 +5,45 @@
 	<h1>{% blocktrans %}Renouvellement Licence{% endblocktrans %}</h1>
 		<form method="POST" class="post-form">{% csrf_token %}
 			{{ form.as_p }}
-			<button type="submit" class="save btn btn-default">{% trans "Envoyer" %}</button>
+			<div class="btn-group">
+				<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#helpHostID" aria-expanded="false" aria-controls="helpHostID">
+					{% blocktrans %}Comment trouver mon HostID ?{% endblocktrans %}
+				</button>
+				<button type="submit" class="save btn btn-default">{% trans "Envoyer" %}</button>
+			</div>
+			
+			<div class="collapse" id="helpHostID">
+				<div class="card card-body" id="helpText">
+					<div id="Windows" style="display: initial">
+						<h3>Windows</h3>
+						<p>{% blocktrans %}Pour les réseaux simultanés ou les réseaux nommés Licence d'utilisateurs, l'adresse MAC doit être utilisé comme hostID. Par ailleurs, les ordinateurs possédant un disque B: doit utilisé l'adresse MAC comme hostID.{% endblocktrans %}</p>
+						<p>{% blocktrans %}Pour obtenir l'adresse MAC, ouvrez un Invité de Commande et lancez la commande suivante: {% endblocktrans %}</p>
+						<p>getmac</p>
+					</div>
+					<div id="Linux" style="display: initial">
+						<h3>Linux</h3>
+						<p>{% blocktrans %}Avec la version R2014a et supérieure, n'importe quelle adresse MAC peut servir comme HostID malgré le nom de l'interface. Si les interfaces sont énumérées, utiliser la plus petite interface.{% endblocktrans %}</p>
+						<p>{% blocktrans %}Pour obtenir l'adresse MAC grâce à la console shell, lancez la commande suivante :{% endblocktrans %}</p>
+						<p>/sbin/ifconfig {% blocktrans %}<nomInterface>{% endblocktrans %}</p>
+						<p>{% blocktrans %}Où <nomInterface> est le nom de l'interface réseau. Par exemple, en0, eth0, wlan0 ou enp5s0 sont des noms d'interface communs sur Linux, bien que cela peut varier d'un ordinateur à un autre.{% endblocktrans %}</p>
+						<p>{% blocktrans %}Pour la version R2013b et inférieure, l'hostID est l'adresse MAC du l'interface eth0 ou en0.{% endblocktrans %}</p>
+						<p>{% blocktrans %}Pour obtenir l'adresse MAC grâce à la console shell, lancez la commande suivante :{% endblocktrans %}</p>
+						<p>/{% blocktrans %}sbin/ifconfig eth0 ou /sbin/ifconfig eth1 {% endblocktrans %}</p>
+						<p>{% blocktrans %}L'adresse MAC est généralement précédée de la valeur 'HWaddr'. Si la distribution Linux n'a pas d'interface réseau qui suit le schéma (enX or ethX), il sera nécessaire de mettre à jour à la version R2014a ou supérieur, ou changez le nom des interfaces afin que MatLab le détecte. Consulter la documentation de la distribution Linux que vous possédez pour connaître les instructions afin de changer le nom de votre interface.{% endblocktrans %}</p>
+					</div>
+					<div id="MacOs" style="display: initial">
+						<h3>MacOS</h3>
+						<p>{% blocktrans %}Pour MacOS, le hostID est l'adresse MAC du périphérique en0.{% endblocktrans %}</p>
+						<p>{% blocktrans %}Pour obtenir l'adresse MAC du périphérique en0, commencez par ouvrir un terminal :{% endblocktrans %}</p>
+						<p>{% blocktrans %}Ouvrir Finder{% endblocktrans %}</p>
+						<p>{% blocktrans %}Ouvrir le dossier Application{% endblocktrans %}</p>
+						<p>{% blocktrans %}Ouvrir le dossier Utilitaire{% endblocktrans %}</p>
+						<p>{% blocktrans %}Lancer Terminal{% endblocktrans %}</p>
+						<p>{% blocktrans %}Dans le terminal, rentrez la commande suivante:{% endblocktrans %}</p>
+						<p>ifconfig en0 | grep^ether</p>
+						<p>{% blocktrans %}L'adresse MAC est précédée par la valeur 'ether'.{% endblocktrans %}</p>
+					</div>
+				</div>
+			</div>
 	</form>
 {% endblock %}
