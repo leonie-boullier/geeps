@@ -18,9 +18,12 @@
 			{% csrf_token %}
 			<input type="hidden" value="#" name="next"/>
 			<select name="language">
-			{% for lang in LANGUAGES %}
-				<option value="{{ lang.0 }}">{{ lang.1 }}</option>
-			{% endfor %}
+				{% get_current_language as LANGUAGE_CODE %}
+				{% for language in LANGUAGES %}
+					<option value="{{ language.0 }}"{% if language.0 == LANGUAGE_CODE %} selected="selected"{% endif %}>
+						{{ language.1 }}
+					</option>
+				{% endfor %}
 			</select>
 			<input type="submit" />
 		</form>
