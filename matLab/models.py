@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from django.db import models
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
+from django.core.validators import RegexValidator
 
 # Create your models here.
 
@@ -34,7 +35,7 @@ class Licence(models.Model):
 	batiment = models.CharField(max_length=10, verbose_name=_("Bâtiment"), choices=BATIMENTS, default="GeePs")
 	matlabRelease = models.CharField(max_length=10, verbose_name=_("Version de MatLab"), choices=MATLABRELEASES, default="R2017b")
 	operatingSystem = models.CharField(max_length=10 , verbose_name=_("Système"), choices=SYSTEMS, default="Windows")
-	hostID = models.IntegerField()
+	hostID = models.CharField(max_length=17)
 
 
 	def __str__(self):
