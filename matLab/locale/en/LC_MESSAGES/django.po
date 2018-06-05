@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-05 11:51+0000\n"
+"POT-Creation-Date: 2018-06-05 13:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,47 +17,43 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: matLab/models.py:29 matLab/templates/matLab/licence_details.html:56
+#: matLab/models.py:30
 msgid "Nom"
 msgstr "Name"
 
-#: matLab/models.py:30 matLab/templates/matLab/licence_details.html:55
+#: matLab/models.py:31
 msgid "Prénom"
 msgstr "Firstname"
 
-#: matLab/models.py:31 matLab/templates/matLab/licence_details.html:57
+#: matLab/models.py:32
 msgid "Adresse mail"
 msgstr "Email adress"
 
-#: matLab/models.py:32 matLab/templates/matLab/licence_details.html:58
+#: matLab/models.py:33
 msgid "Téléphone"
 msgstr "Phone Number"
 
-#: matLab/models.py:33 matLab/templates/matLab/licence_details.html:59
+#: matLab/models.py:34
 msgid "Bureau"
 msgstr "Office"
 
-#: matLab/models.py:34 matLab/templates/matLab/licence_details.html:60
+#: matLab/models.py:35
 msgid "Bâtiment"
 msgstr "Building"
 
-#: matLab/models.py:35 matLab/templates/matLab/licence_details.html:61
+#: matLab/models.py:36
 msgid "Version de MatLab"
 msgstr "MatLab release"
 
-#: matLab/models.py:36 matLab/templates/matLab/licence_details.html:62
+#: matLab/models.py:37
 msgid "Système"
 msgstr "Operating System"
 
-#: matLab/templates/matLab/email.html:2
+#: matLab/templates/matLab/email.html:1
 #, fuzzy
 #| msgid "Demande d'activation de la licence Matlab"
 msgid "Votre demande d'activation de Matlab "
 msgstr "Licence Matlab activation request"
-
-#: matLab/templates/matLab/email.html:2
-msgid "a bien été prise en compte pour votre système "
-msgstr ""
 
 #: matLab/templates/matLab/formulaire.html:5
 #: matLab/templates/matLab/index.html:4
@@ -186,18 +182,22 @@ msgstr "In the Terminal window, enter the following command:"
 msgid "L'adresse MAC est précédée par la valeur 'ether'."
 msgstr "The MAC address is the value listed next to 'ether'."
 
-#: matLab/templates/matLab/licence_details.html:53
+#: matLab/templates/matLab/licence_details.html:55
 msgid "Détail renouvellement licence"
 msgstr "Licence renewal"
 
-#: matLab/views.py:65
+#: matLab/views.py:67
 msgid "Demande d'activation de la licence Matlab"
 msgstr "Licence Matlab activation request"
 
-#: matLab/views.py:66
+#: matLab/views.py:68
 msgid ""
 "Votre demande d'activation de Matlab {} a bien été prise en compte pour "
 "votre système {}.\n"
 "\n"
 "Le CRI du GeePs"
-msgstr "Your Matlab {} request activation for your {} operating system was well taken into account.\n\n CRI's GeePs"
+msgstr ""
+"Your Matlab {} request activation for your {} operating system was well "
+"taken into account.\n"
+"\n"
+" CRI's GeePs"

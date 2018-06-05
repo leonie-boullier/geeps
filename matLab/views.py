@@ -61,12 +61,13 @@ def formulaire(request):
 			subject = "Activation licence Matlab"
 			body = "Demande d\'activation de Matlab {} de {} {} pour le système {}.".format(release, firstname, name, os)
 			#sendMail(subject, body, ['cri@geeps.centralesupelec.fr'], nomFichier, csvfile, pdfFile)
+			sendMail(subject, body, [email], nomFichier, csvfile, pdfFile)
 
 			#Email d'acquittement
 			subject = _("Demande d'activation de la licence Matlab")
 			body = _("Votre demande d'activation de Matlab {} a bien été prise en compte pour votre système {}.\n\nLe CRI du GeePs").format(release, os)
 			sendMailOut(subject, body, [email])
-			            
+
 			return redirect('licence_detail', pk=licence.pk)
 	else:
 		form = LicenceForm()
@@ -91,10 +92,10 @@ def sendMailOut(subject, body, adresses):
 def render_to_pdf(template_src, context_dict):
     template = get_template(template_src)
     context = Context(context_dict)
-    html = template.render(context_dict) 
+    html = template.render(context_dict)
     result = StringIO.StringIO()
 
-    pdf = pisa.pisaDocument(StringIO.StringIO(html.encode("ISO-8859-1")), result)
+    pdf = pisa.pisaDocument(StringIO.StringIO(html.encode("utf-8")), result)
     if not pdf.err:
         return result
     return HttpResponse('Nous avons des erreurs')

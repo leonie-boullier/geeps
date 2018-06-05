@@ -43,23 +43,25 @@ form {
 }
 
 form p {
-	margin-left: 28%; 
+	margin-left: 28%;
 }
 
 form p label {
 	width: 160px;
-}	
+}
+
+
 	</style>
 	<h1>{% trans "Détail renouvellement licence" %}</h1>
 	<ul>
-	    <li>{% trans "Prénom" %} : {{licence.firstname}} </li>
-	    <li>{% trans "Nom" %} : {{licence.name}}</li>
-	    <li>{% trans "Adresse mail" %} Email : {{licence.email}}</li>
-	    <li>{% trans "Téléphone" %} Telephone : {{licence.telephone}}</li>
-	    <li>{% trans "Bureau" %} Bureau : {{licence.bureau}}</li>
-	    <li>{% trans "Bâtiment" %} Batiment : {{licence.batiment}}</li>
-	    <li>{% trans "Version de MatLab" %} Matlab Realease : {{licence.matlabRelease}}</li>
-	    <li>{% trans "Système" %} OS : {{licence.operatingSystem}}</li>
+	    <li>Prénom : {{licence.firstname}} </li>
+	    <li>Nom : {{licence.name}}</li>
+	    <li>Email : {{licence.email}}</li>
+	    <li>Téléphone : {{licence.telephone}}</li>
+	    <li>Bureau : {{licence.bureau}}</li>
+	    <li>Bâtiment : {{licence.batiment}}</li>
+	    <li>Version MatLab : {{licence.matlabRelease}}</li>
+	    <li>Système: {{licence.operatingSystem}}</li>
 	    <li>HostID : {{licence.hostID}}</li>
   	</ul>
 {% endblock %}
