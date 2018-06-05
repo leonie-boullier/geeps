@@ -46,7 +46,8 @@ def formulaire(request):
 
 			csvfile = StringIO.StringIO()
 			writer = csv.writer(csvfile)
-			writer.writerow([activationLabel, release, hostID, name, firstname, email, bureau, tel, batiment, os])
+			row = [activationLabel, release, hostID, name, firstname, email, bureau, tel, batiment, os]
+			writer.writerow([s.encode("utf-8") for s in row])
 
 			# PDF
                         pdfFile =  render_to_pdf(
