@@ -4,10 +4,9 @@ from __future__ import unicode_literals
 from django.core.mail import EmailMessage
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from django.template.loader import get_template
+from django.template.loader import get_template, render_to_string
 from django.template import Context
 from django.utils.translation import ugettext as _
-from django.utils import translation
 from .forms import LicenceForm
 from .models import Licence
 from cgi import escape
@@ -63,12 +62,10 @@ def formulaire(request):
 			#sendMail(subject, body, ['cri@geeps.centralesupelec.fr'], nomFichier, csvfile, pdfFile)
 
 			#Email d'acquittement
-			lang = translation.get_current_language
-			translation.activate(lang)
 			subject = _("Demande d'activation de la licence Matlab")
 			body = _("Votre demande d'activation de Matlab {} a bien été prise en compte pour votre système {}.\n\nLe CRI du GeePs").format(release, os)
 			sendMailOut(subject, body, [email])
-                        
+			            
 			return redirect('licence_detail', pk=licence.pk)
 	else:
 		form = LicenceForm()
