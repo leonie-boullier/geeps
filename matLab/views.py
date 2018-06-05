@@ -51,7 +51,7 @@ def formulaire(request):
 
 			# PDF
                         pdfFile =  render_to_pdf(
-                                'matLab/licence_details.html',
+                                'matLab/pdf.html',
                                 {
                                     'pagesize' : 'A4',
                                     'licence' : licence,

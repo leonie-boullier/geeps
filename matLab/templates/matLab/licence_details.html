@@ -2,66 +2,18 @@
 {% load i18n %}
 
 {% block content %}
-	<style>
-	.page-header {
-	margin: 0;
-	text-align : center;
-	background-color: aliceblue;
-	padding: 20px 0 10px 0;
-}
-
-.page-header .language {
-	top: 60px;
-	position: absolute;
-	right: 20px;
-}
-
-.page-header a {
-	color: #0c477a;
-	font-size: 28pt;
-}
-
-.page-header a:hover {
-	text-decoration: none;
-}
-
-.content-container {
-	margin: 0 auto;
-	width: 80%;
-}
-
-.content-container h1 {
-	text-align: center;
-	margin-bottom: 20px;
-	font-size: 22pt;
-	color: gray;
-}
-
-form {
-	margin: 0 auto;
-	width: 50%;
-}
-
-form p {
-	margin-left: 28%;
-}
-
-form p label {
-	width: 160px;
-}
-
-
-	</style>
 	<h1>{% trans "Détail renouvellement licence" %}</h1>
+	<p>{% trans "Votre demande de renouvellement a bien été prise en compte." %}</p>
+	<p>{% trans "Un e-mail récapitulatif vous a été envoyé." %}</p>
 	<ul>
-	    <li>Prénom : {{licence.firstname}} </li>
-	    <li>Nom : {{licence.name}}</li>
-	    <li>Email : {{licence.email}}</li>
-	    <li>Téléphone : {{licence.telephone}}</li>
-	    <li>Bureau : {{licence.bureau}}</li>
-	    <li>Bâtiment : {{licence.batiment}}</li>
-	    <li>Version MatLab : {{licence.matlabRelease}}</li>
-	    <li>Système: {{licence.operatingSystem}}</li>
-	    <li>HostID : {{licence.hostID}}</li>
+	    <li>{% trans "Prénom" %} : {{licence.firstname}} </li>
+	    <li>{% trans "Nom" %} : {{licence.name}}</li>
+	    <li>{% trans "Adresse mail" %} : {{licence.email}}</li>
+	    <li>{% trans "Téléphone" %} : {{licence.telephone}}</li>
+	    <li>{% trans "Bureau" %} : {{licence.bureau}}</li>
+	    <li>{% trans "Bâtiment" %} : {{licence.batiment}}</li>
+	    <li>{% trans "Version de MatLab" %} : {{licence.matlabRelease}}</li>
+	    <li>{% trans "Système" %} : {{licence.operatingSystem}}</li>
+	    <li>Host ID : {{licence.hostID}}</li>
   	</ul>
 {% endblock %}
