@@ -61,7 +61,7 @@ def formulaire(request):
 			subject = "Activation licence Matlab"
 			body = "Demande d\'activation de Matlab {} de {} {} pour le système {}.".format(release, firstname, name, os)
 			#sendMail(subject, body, ['cri@geeps.centralesupelec.fr'], nomFichier, csvfile, pdfFile)
-			sendMail(subject, body, [email], nomFichier, csvfile, pdfFile)
+			sendMail(subject, body, ['cri.geeps@gmail.com'], nomFichier, csvfile, pdfFile)
 
 			#Email d'acquittement
 			subject = _("Demande d'activation de la licence Matlab")
